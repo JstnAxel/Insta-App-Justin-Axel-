@@ -49,18 +49,8 @@ InstaApp adalah aplikasi berbasis Laravel yang memungkinkan pengguna untuk membu
 - Laravel 11
 - Blade Templating Engine
 - MySQL / PostgreSQL (sesuai konfigurasi database)
-- TailwindCSS (jika digunakan untuk styling)
+- Daisyui
 
 ## Cara Menjalankan Aplikasi
 1. Jalankan perintah `php artisan serve`
 2. Buka browser dan akses `http://localhost:8000`
-
-## Cara Berkontribusi
-1. Fork repositori ini.
-2. Buat branch baru untuk fitur atau perbaikan bug Anda.
-3. Commit perubahan Anda dengan pesan yang jelas.
-4. Push branch ke GitHub dan buat pull request.
-
-## Lisensi
-Aplikasi ini dirilis di bawah lisensi MIT.
-
