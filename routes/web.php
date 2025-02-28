@@ -9,10 +9,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Post;
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('register');
 });
 
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+Route::get('/register', [AuthenticatedSessionController::class, 'create'])->name('register');
 
 
 Route::get('/dashboard', function () {
