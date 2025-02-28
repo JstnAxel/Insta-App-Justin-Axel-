@@ -2,31 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Like;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
-    public function toggleLike(Post $post)
+    public function toggle(Post $post)
     {
         $user = Auth::user();
 
-        // Cek apakah user sudah like
-        $existingLike = Like::where('user_id', $user->id)->where('post_id', $post->id)->first();
-
-        if ($existingLike) {
-            // Jika sudah like, maka unlike
-            $existingLike->delete();
+        if ($post->isLikedByUser()) {
+            $post->likes()->where('user_id', $user->id)->delete();
+            $liked = false;
         } else {
-            // Jika belum like, maka like
-            Like::create([
-                'user_id' => $user->id,
-                'post_id' => $post->id,
-            ]);
+            $post->likes()->create(['user_id' => $user->id]);
+            $liked = true;
         }
 
-        return redirect()->back()->with('success', 'Like status updated!');
+        return response()->json([
+            'liked' => $liked,
+            'likesCount' => $post->likes()->count(),
+        ]);
     }
 }

@@ -6,10 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Instaxel</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="shortcut icon" href="{{ asset('myfavicon.ico') }}">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->

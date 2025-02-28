@@ -5,11 +5,15 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Post;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
+
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+
 
 Route::get('/dashboard', function () {
     $posts = Post::latest()->get(); 
@@ -25,10 +29,10 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('posts', PostController::class)->middleware('auth');
 Route::middleware('auth')->group(function () {
-    Route::post('/likes/{post}', [LikeController::class, 'toggleLike'])->name('likes.toggle');
-    Route::post('/comments/{post}', [CommentController::class, 'store'])->name('comments.store');
+    Route::post('/posts/{post}/like', [LikeController::class, 'toggle'])->name('likes.toggle');
+    Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
     Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
-});
+    });
 
 
 
