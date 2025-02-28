@@ -48,7 +48,7 @@ Instaxel adalah aplikasi berbasis Laravel yang memungkinkan pengguna untuk membu
 ## Teknologi yang Digunakan
 - Laravel 11
 - Blade Templating Engine
-- MySQL / PostgreSQL (sesuai konfigurasi database)
+- MySQL 
 - Daisyui
 
 ## Cara Menjalankan Aplikasi
