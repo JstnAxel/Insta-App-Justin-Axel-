@@ -35,7 +35,7 @@ InstaApp adalah aplikasi berbasis Laravel yang memungkinkan pengguna untuk membu
 
 5. Konfigurasi database di `.env`, lalu jalankan migrasi:
    ```sh
-   php artisan migrate --seed
+   php artisan migrate 
    ```
 
 6. Jalankan server aplikasi:
