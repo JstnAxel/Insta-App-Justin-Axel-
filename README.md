@@ -1,4 +1,4 @@
-# Instaxel - Laravel
+# Instaxel 
 
 ## Deskripsi
 Instaxel adalah aplikasi berbasis Laravel yang memungkinkan pengguna untuk membuat akun, login, membuat postingan dengan teks dan gambar, memberikan like, serta berkomentar pada postingan. Aplikasi ini menggunakan Blade sebagai templating engine tanpa framework frontend tambahan.
