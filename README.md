@@ -14,8 +14,8 @@ Instaxel adalah aplikasi berbasis Laravel yang memungkinkan pengguna untuk membu
 
 1. Clone repositori ini:
    ```sh
-   git clone https://github.com/username/reponame.git
-   cd reponame
+   git clone https://github.com/JstnAxel/Instaaxel.git
+   cd Instaxel
    ```
 
 2. Install dependensi Laravel:
